@@ -52,9 +52,7 @@ wilson_score <- function(positive, total, confidence = 0.95) {
 }
 
 
-# ---------------------------------------------------------------
-# Compare multiple products
-# ---------------------------------------------------------------
+# COMPARE MULTIPLE PRODUCTS
 
 compare_products_wilson <- function(products, confidence = 0.95) {
   #' Compare a list of products by their Wilson Score lower bound.
@@ -105,8 +103,8 @@ plot_wilson_floor <- function(approval_rate = 0.92, confidence = 0.95) {
     ylab  = "Wilson Score Lower Bound",
     main  = paste0(
       "Wilson Score Floor vs Sample Size\n",
-      "(Approval Rate: ", scales::percent(approval_rate),
-      ", Confidence: ", scales::percent(confidence), ")"
+      "(Approval Rate: ", round(approval_rate * 100), "%",
+      ", Confidence: ", round(confidence * 100), "%)"
     ),
     ylim  = c(min(floors) - 0.05, 1.0)
   )
